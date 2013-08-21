@@ -1,0 +1,11 @@
+Bundle 'tenable/vim-nasl'
+Bundle 'FredKSchott/CoVim'
+Bundle 'bling/vim-bufferline'
+Bundle 'AndrewRadev/linediff.vim'
+Bundle 'benmills/vimux'
+Bundle 'BenBergman/vsearch.vim'
+
+"let g:spf13_no_views = 1  " Useful to disable views while tweaking config
+let g:spf13_no_neosnippet_expand = 1  " Prefer digraph
+let g:spf13_leader = '\'
+let g:spf13_no_fastTabs = 1

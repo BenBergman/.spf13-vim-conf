@@ -1,0 +1,118 @@
+" Key inversion was causing issues with me through PuTTY, so disabled for now
+"" Invert number/symbol keys while in insert mode {{{
+"" You aren't hard coding your variables, are you?
+"
+"inoremap 1 !
+"inoremap 2 @
+"inoremap 3 #
+"inoremap 4 $
+"inoremap 5 %
+"inoremap 6 ^
+"inoremap 7 &
+"inoremap 8 *
+"inoremap 9 (
+"inoremap 0 )
+"
+"inoremap ! 1
+"inoremap @ 2
+"inoremap # 3
+"inoremap $ 4
+"inoremap % 5
+"inoremap ^ 6
+"inoremap & 7
+"inoremap * 8
+"inoremap ( 9
+"inoremap ) 0
+"
+"" }}}
+
+let g:airline_theme = "solarized"
+let g:airline#extensions#hunks#non_zero_only = 1
+
+" Fixes bug in vim/zsh that was exposed by gitgutter realtime mode
+set shell=$SHELL
+
+map <C-c> <Esc>
+
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+
+unmap <C-e>
+map <C-f> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+
+vnoremap <leader>ld :Linediff<CR>
+nnoremap <leader>ld V:Linediff<CR>
+noremap <leader>ldr :LinediffReset<CR>
+
+" Takes whatever was last searched for and does
+" a find and replace for what you type next
+" Useful with the * command
+map <leader>r <Esc>:%s/\(<C-r>/\)//g<left><left>
+map <leader>R <Esc>:%s/\(<C-r>/\)//gc<left><left><left>
+
+nnoremap gb :ls<cr>:buffer
+let g:bufferline_solo_highlight = 1
+
+" Try to fix <CR> when completion menu is displayed
+"inoremap <expr><CR> "\<CR>"
+
+let g:autoclose_vim_commentmode = 1
+
+" Line wrapping
+set wrap
+set linebreak   " break on characters in breakat
+set nolist      " allow linebreak to work
+if &encoding == 'utf-8'
+	let &showbreak="→ "
+	
+	" Powerline glyphs
+	digraphs bp 57504 " 
+	digraphs lp 57505 " 
+	digraphs rp 57506 " 
+	digraphs <P 57520 " 
+	digraphs <p 57521 " 
+	digraphs >P 57522 " 
+	digraphs >p 57523 " 
+endif
+
+set colorcolumn=80
+
+set virtualedit=  " remove 'onemore' option
+
+set modeline
+
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
+set noexpandtab
+
+" Command to convert leading spaces into tabs (arg is the number of existing
+" spaces per tab character)
+" From http://vim.wikia.com/wiki/Super_retab
+command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
+
+if !has('gui_running')
+	let g:indent_guides_enable_on_vim_startup=0
+endif
+
+map <leader>vq :VimuxCloseRunner<CR>
+
+
+autocmd BufNewFile,BufRead *.nasl set filetype=nasl
+autocmd BufNewFile,BufRead *.inc set filetype=nasl
+autocmd BufNewFile,BufRead *.inc set indentexpr=  " TODO: create function and include in vim-nasl
+autocmd FileType nasl setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2 colorcolumn=70
+
+let g:tagbar_type_nasl = {
+	\ 'ctagstype' : 'nasl',
+	\ 'kinds'     : [
+		\ 'f:functions',
+		\ 'v:variables',
+		\ 'g:globals',
+	\ ]
+\ }
+
+map <leader>rv :call VimuxRunCommand("clear; validate-plugin -s -s " . bufname("%"))<CR>
+
