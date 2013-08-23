@@ -102,6 +102,7 @@ endif
 map <leader>vq :VimuxCloseRunner<CR>
 
 
+autocmd BufNewFile,BufRead *.audit set filetype=xml
 autocmd BufNewFile,BufRead *.nasl set filetype=nasl
 autocmd BufNewFile,BufRead *.inc set filetype=nasl
 autocmd BufNewFile,BufRead *.inc set indentexpr=  " TODO: create function and include in vim-nasl
