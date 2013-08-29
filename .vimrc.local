@@ -34,6 +34,10 @@ let g:airline#extensions#hunks#non_zero_only = 1
 " Fixes bug in vim/zsh that was exposed by gitgutter realtime mode
 set shell=$SHELL
 
+" Fixes bug where Tagbar causes Airline to break
+au VimEnter * AirlineToggle
+au VimEnter * AirlineToggle
+
 map <C-c> <Esc>
 
 nmap <C-j> <C-w>j
