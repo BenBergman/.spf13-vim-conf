@@ -106,10 +106,10 @@ endif
 map <leader>vq :VimuxCloseRunner<CR>
 
 
-autocmd BufNewFile,BufRead *.audit set filetype=xml
+autocmd BufNewFile,BufRead *.audit set syntax=xml
 autocmd BufNewFile,BufRead *.nasl set filetype=nasl
 autocmd BufNewFile,BufRead *.inc set filetype=nasl
-autocmd BufNewFile,BufRead *.inc set indentexpr=  " TODO: create function and include in vim-nasl
+autocmd BufNewFile,BufRead *.inc set indentexpr=
 autocmd FileType nasl setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2 colorcolumn=70
 
 let g:tagbar_type_nasl = {
@@ -121,5 +121,18 @@ let g:tagbar_type_nasl = {
 	\ ]
 \ }
 
+let g:syntastic_nasl_checkers = ['nasl_parse', 'nasl']
+
 map <leader>rv :call VimuxRunCommand("clear; validate-plugin -s -s " . bufname("%"))<CR>
 
+function! NamedArgsExpand()
+	:s/,\s*/,/g
+	?(
+	:s/(\s*/(/
+	/)
+	:s/\s*)/)/
+	normal V%=
+	/:
+	:Tabularize /:
+endfunction
+autocmd FileType nasl map <silent> <leader>ne :call NamedArgsExpand()<CR>
