@@ -47,7 +47,9 @@ nmap <C-k> <C-w>k
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
 
-unmap <C-e>
+if mapcheck('<C-e>') != ''
+	unmap <C-e>
+endif
 map <C-f> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 
 vnoremap <leader>ld :Linediff<CR>
