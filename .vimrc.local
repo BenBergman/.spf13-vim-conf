@@ -141,3 +141,10 @@ function! NamedArgsExpand()
 	:Tabularize /:
 endfunction
 autocmd FileType nasl map <silent> <leader>ne :call NamedArgsExpand()<CR>
+
+function! MakeTiny(url)
+	let result = system("mktiny " . a:url)
+	let result = substitute(result, '[^a-zA-Z0-9:/.?]', '', 'g')
+	call setline(line('.'), substitute(getline('.'), a:url, result, 'g'))
+endfunction
+vmap mt y :call MakeTiny('<C-r>"')<CR>
