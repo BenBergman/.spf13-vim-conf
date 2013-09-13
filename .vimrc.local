@@ -101,6 +101,7 @@ command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 
 if !has('gui_running')
 	let g:indent_guides_enable_on_vim_startup=0
+	set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 10
 endif
 
 map <leader>vq :VimuxCloseRunner<CR>

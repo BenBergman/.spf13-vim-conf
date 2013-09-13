@@ -1,0 +1,5 @@
+"let g:spf13_no_views = 1  " Useful to disable views while tweaking config
+let g:spf13_no_neosnippet_expand = 1  " Prefer digraph
+let g:spf13_leader = '\'
+let g:spf13_no_fastTabs = 1
+let g:airline_powerline_fonts=1
