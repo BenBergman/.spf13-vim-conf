@@ -70,6 +70,10 @@ let g:bufferline_solo_highlight = 1
 
 let g:autoclose_vim_commentmode = 1
 
+" This might be better suited for a .syntastic_cpp_config per project
+let g:syntastic_cpp_include_dirs=['/usr/msp430/include','/opt/energia/hardware/msp430/cores/msp430']
+let g:syntastic_cpp_compiler_options=' -mmcu=msp430g2553'
+
 " Line wrapping
 set wrap
 set linebreak   " break on characters in breakat
@@ -91,6 +95,8 @@ set colorcolumn=80
 
 set virtualedit=  " remove 'onemore' option
 
+set foldlevelstart=99
+
 set modeline
 
 set softtabstop=4
@@ -105,8 +111,9 @@ command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 
 if !has('gui_running')
 	let g:indent_guides_enable_on_vim_startup=0
-	set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 10
 endif
+set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 10
+set guioptions-=rl
 
 map <leader>vq :VimuxCloseRunner<CR>
 
