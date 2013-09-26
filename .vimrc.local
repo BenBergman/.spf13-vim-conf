@@ -118,11 +118,24 @@ set guioptions-=rl
 map <leader>vq :VimuxCloseRunner<CR>
 
 
+" Append modeline after last line in buffer.
+" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
+" files.
+function! AppendModeline()
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :",
+        \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(line("$"), l:modeline)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+
+
 autocmd BufNewFile,BufRead *.audit set syntax=xml
 autocmd BufNewFile,BufRead *.nasl set filetype=nasl
 autocmd BufNewFile,BufRead *.inc set filetype=nasl
 autocmd BufNewFile,BufRead *.inc set indentexpr=
 autocmd FileType nasl setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=2 colorcolumn=70
+autocmd FileType nasl set commentstring=#\ %s
 
 let g:tagbar_type_nasl = {
 	\ 'ctagstype' : 'nasl',
