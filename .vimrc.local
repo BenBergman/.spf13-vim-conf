@@ -70,6 +70,9 @@ let g:bufferline_solo_highlight = 1
 
 let g:autoclose_vim_commentmode = 1
 
+let g:multi_cursor_exit_from_insert_mode = 0
+let g:multi_cursor_exit_from_visual_mode = 0
+
 " This might be better suited for a .syntastic_cpp_config per project
 let g:syntastic_cpp_include_dirs=['/usr/msp430/include','/opt/energia/hardware/msp430/cores/msp430']
 let g:syntastic_cpp_compiler_options=' -mmcu=msp430g2553'
