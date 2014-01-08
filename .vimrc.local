@@ -30,6 +30,8 @@ UnBundle 'airblade/vim-gitgutter'
 
 filetype on
 
+let CoVim_default_name = "Ben"
+
 let g:airline_theme = "solarized"
 let g:airline#extensions#hunks#non_zero_only = 1
 
