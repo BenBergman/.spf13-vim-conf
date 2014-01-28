@@ -1,4 +1,5 @@
 UnBundle 'airblade/vim-gitgutter'
+UnBundle 'justinmk/vim-sneak'
 
 " Key inversion was causing issues with me through PuTTY, so disabled for now
 "" Invert number/symbol keys while in insert mode {{{
