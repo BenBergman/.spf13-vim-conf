@@ -169,6 +169,11 @@ function! NamedArgsExpand()
 endfunction
 autocmd FileType nasl map <silent> <leader>ne :call NamedArgsExpand()<CR>
 
+function! DisplayVar(var)
+	call setline(line('.'), substitute(getline('.'), a:var, "display('".a:var.": ', ".a:var.", '".'\\n'."');", 'g'))
+endfunction
+autocmd FileType nasl map <silent> <leader>nd y :call DisplayVar('<C-r>"')<CR>
+
 function! MakeTiny(url)
 	let result = system("mktiny " . a:url)
 	let result = substitute(result, '[^a-zA-Z0-9:/.?]', '', 'g')
