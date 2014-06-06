@@ -55,6 +55,8 @@ if mapcheck('<C-e>') != ''
 endif
 map <C-f> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 
+silent! iunmap <expr> <Tab>
+
 vnoremap <leader>ld :Linediff<CR>
 nnoremap <leader>ld V:Linediff<CR>
 noremap <leader>ldr :LinediffReset<CR>
