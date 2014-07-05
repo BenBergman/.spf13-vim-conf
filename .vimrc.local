@@ -125,6 +125,8 @@ set guioptions-=rl
 
 map <leader>vq :VimuxCloseRunner<CR>
 
+map Q @@
+
 
 " Append modeline after last line in buffer.
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
