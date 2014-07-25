@@ -161,7 +161,7 @@ let g:syntastic_nasl_checkers = ['nasl_parse', 'nasl']
 
 map <leader>rv :call VimuxRunCommand("clear; validate-plugin -s -s " . bufname("%"))<CR>
 
-autocmd FileType nasl map <silent> <leader>ne mn:s/,\s*/,\r/g'nf(V%:s/(\s*\([^)]\)/(\r\1/'nf(V%:s/\([^(]\)\s*)/\1\r)/'nf(V%='nf(V%:Tabularize /:
+autocmd FileType nasl map <silent> <leader>ne [(mnV%:s/,\s*\([^$]\)/,\r\1/g'nf(V%:s/(\s*\([^)]\)/(\r\1/'nf(V%:s/\([^(]\)\s*)/\1\r)/'nf(V%='nf(V%:Tabularize /:
 
 function! DisplayVar(var)
 	call setline(line('.'), substitute(getline('.'), a:var, "display('".a:var.": ', ".a:var.", '".'\\n'."');", 'g'))
