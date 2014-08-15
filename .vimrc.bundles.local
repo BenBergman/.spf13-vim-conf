@@ -13,3 +13,22 @@ Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
 Bundle 'IndexedSearch'
 Bundle 'VisIncr'
+
+" Plugins to try out
+" ==================
+"Bundle 'jaxbot/selective-undo.vim'			" Undo based on context of visual selection
+"Bundle 'wellle/tmux-complete.vim'			" Completion from neighbouring tmux pane
+"Bundle 'christoomey/vim-tmux-navigator'	" Navigate between tmux panes just like vim panes
+"Bundle 'tpope/vim-sleuth'					" Heuristically change settings like shiftwidth to match the current file
+"Bundle 'jaxbot/github-issues.vim'			" Integrate Github issues into vim
+"Bundle 'wellle/targets.vim'				" Adds extra text objects
+"Bundle 'tommcdo/vim-exchange'				" Swap two regions of text - http://vimcasts.org/episodes/swapping-two-regions-of-text-with-exchange-vim/
+"Bundle 'tommcdo/vim-ninja-feet'			" Strike from the cursor to either end of a text object
+"Bundle 'inav-cukic/vim-ctrlp-switcher'		" Switching between similar files
+"Bundle 'milkypostman/vim-togglelist'		" Quickly launch location and quickfix lists
+"Bundle 'kshenoy/vim-togglelist'			" Fork with focus changing
+"Bundle 'kshenoy/vim-signature'				" Toggle, display, and navigate marks
+"Bundle 'dhruvasagar/vim-table-mode'		" Table creation mode
+"Bundle 'paradigm/TextObjectify'			" Improve text objects
+"Bundle 'sverin-lemaignan/vim-minimap'		" Sublime-like minimap using Drawille
+"http://www.vim.org/scripts/script.php?script_id=2222	" Commandline completion
