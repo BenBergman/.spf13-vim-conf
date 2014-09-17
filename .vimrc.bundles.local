@@ -16,9 +16,9 @@ Bundle 'VisIncr'
 
 " Plugins to try out
 " ==================
-"Bundle 'jaxbot/selective-undo.vim'			" Undo based on context of visual selection
+Bundle 'jaxbot/selective-undo.vim'
 "Bundle 'wellle/tmux-complete.vim'			" Completion from neighbouring tmux pane
-"Bundle 'christoomey/vim-tmux-navigator'	" Navigate between tmux panes just like vim panes
+Bundle 'christoomey/vim-tmux-navigator'
 "Bundle 'tpope/vim-sleuth'					" Heuristically change settings like shiftwidth to match the current file
 "Bundle 'jaxbot/github-issues.vim'			" Integrate Github issues into vim
 "Bundle 'wellle/targets.vim'				" Adds extra text objects
@@ -30,5 +30,5 @@ Bundle 'VisIncr'
 "Bundle 'kshenoy/vim-signature'				" Toggle, display, and navigate marks
 "Bundle 'dhruvasagar/vim-table-mode'		" Table creation mode
 "Bundle 'paradigm/TextObjectify'			" Improve text objects
-"Bundle 'sverin-lemaignan/vim-minimap'		" Sublime-like minimap using Drawille
+Bundle 'severin-lemaignan/vim-minimap'
 "http://www.vim.org/scripts/script.php?script_id=2222	" Commandline completion
