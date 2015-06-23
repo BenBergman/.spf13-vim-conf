@@ -11,8 +11,11 @@ Bundle 'keepcase.vim'
 "Bundle 'BenBergman/TagHighlight'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
+set regexpengine=1 "revert to pre-7.4 regex engine to make vim-easytags tolerable
 Bundle 'IndexedSearch'
 Bundle 'VisIncr'
+Bundle 'wting/rust.vim'
+Bundle 'openscad.vim'
 
 " Plugins to try out
 " ==================
