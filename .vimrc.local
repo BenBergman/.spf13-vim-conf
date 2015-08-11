@@ -50,6 +50,12 @@ nmap <C-k> <C-w>k
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
 
+if mapcheck('<S-H>') != ''
+	unmap <S-H>
+endif
+if mapcheck('<S-L>') != ''
+	unmap <S-L>
+endif
 if mapcheck('<C-e>') != ''
 	unmap <C-e>
 endif
