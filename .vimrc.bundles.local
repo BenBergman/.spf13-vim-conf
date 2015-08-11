@@ -16,6 +16,7 @@ Bundle 'IndexedSearch'
 Bundle 'VisIncr'
 Bundle 'openscad.vim'
 Bundle 'coddingtonbear/confluencewiki.vim'
+Bundle 'tmux-plugins/vim-tmux-focus-events'
 
 " Plugins to try out
 " ==================
