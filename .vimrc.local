@@ -43,7 +43,7 @@ set shell=$SHELL
 au VimEnter * AirlineToggle
 au VimEnter * AirlineToggle
 
-map <C-c> <Esc>
+imap <C-c> <Esc>
 
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
