@@ -1,3 +1,5 @@
+Bundle 'ypid/HTML-AutoCloseTag'
+" 'ypid/HTML-AutoCloseTag' replaces removed repo amirh/HTML...
 Bundle 'tenable/vim-nasl'
 Bundle 'FredKSchott/CoVim'
 "Bundle 'bling/vim-bufferline'
